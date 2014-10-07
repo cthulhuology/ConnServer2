@@ -83,7 +83,7 @@ func (t *Topic) Send(m *message.Message) {
 
 func (t *Topic) Subscribe(a *actor.Actor, r *regexp.Regexp) {
 	t.members = append(t.members,a)	
-	t.bindings = append(t.bindings,a)
+	t.bindings = append(t.bindings,r)
 }
 
 // Unsubscribe removes all instances of an actor from a topic router.  All of the associated bindings
@@ -94,7 +94,7 @@ func (t *Topic) Unsubscribe(a *actor.Actor) {
 	for i,v := range t.members {
 		if v == a {
 			t.members = append(t.members[:i],t.members[i+1:]...)
-			t.bindings = append(t.bindings[:i],t.members[i+1:]...)
+			t.bindings = append(t.bindings[:i],t.bindings[i+1:]...)
 		}
 	}
 }
