@@ -6,32 +6,32 @@ import (
 )
 
 func TestNew(t *testing.T) {
-	var m1 = New([]byte(`[ "hello", "world", 1,2,3 ]`)) 
+	var m1 = New(`[ "hello", "world", 1,2,3 ]`) 
 	if str := m1.String(); `["hello","world",1,2,3]` != str {
 		t.Errorf("String not serialized correctly got %v", str )
 	}
-	var m2 = New([]byte(`[{ "foo" : "bar" }]`))
+	var m2 = New(`[{ "foo" : "bar" }]`)
 	if str := m2.String(); `[{"foo":"bar"}]` != str {
 		t.Errorf("String not serialized correctly got %v", str )
 	}
 }
 
 func TestNewWithSender(t *testing.T) {
-	var m = NewWithSender([]byte(`[ "hello", "world", 1,2,3 ]`),"dave") 
+	var m = NewWithSender(`[ "hello", "world", 1,2,3 ]`,"dave") 
 	if m.sender != "dave" {
 		t.Errorf("Incorrect sender %s", m.sender)
 	}
 }
 
 func TestNewWithTopic(t *testing.T) {
-	var m = NewWithTopic([]byte(`[ "hello", "world", 1,2,3 ]`),"kayaking") 
+	var m = NewWithTopic(`[ "hello", "world", 1,2,3 ]`,"kayaking") 
 	if m.topic != "kayaking" {
 		t.Errorf("Incorrect sender %s", m.sender)
 	}
 }
 
 func TestNewWithSenderAndTopic(t *testing.T) {
-	var m = NewWithSenderAndTopic([]byte(`[ "hello", "world", 1,2,3 ]`),"dave","canals") 
+	var m = NewWithSenderAndTopic(`[ "hello", "world", 1,2,3 ]`,"dave","canals") 
 	if m.sender != "dave" {
 		t.Errorf("Incorrect sender %s", m.sender)
 	}
@@ -41,11 +41,11 @@ func TestNewWithSenderAndTopic(t *testing.T) {
 }
 
 func TestRecipient(t *testing.T) {
-	var m1 = New([]byte(`[ "hello", "world", 1,2,3 ]`)) 
+	var m1 = New(`[ "hello", "world", 1,2,3 ]`) 
 	if recipient := m1.Recipient(); recipient != "hello" {
 		t.Errorf("Incorrect recipient %v for %v", recipient,m1)
 	}
-	var m2 = New([]byte(`[{ "foo" : "bar" }]`))
+	var m2 = New(`[{ "foo" : "bar" }]`)
 	if recipient := m2.Recipient(); recipient != "*" {
 		t.Errorf("Incorrect recipient %v for %v", recipient, m2)
 	}
@@ -53,7 +53,7 @@ func TestRecipient(t *testing.T) {
 
 func TestAt(t *testing.T) {
 	var i = 0
-	var m = New([]byte(`[ "hello", "world", 1, 2.2, {"foo":"bar"}, [1,2,3], false ]`))
+	var m = New(`[ "hello", "world", 1, 2.2, {"foo":"bar"}, [1,2,3], false ]`)
 	if u,v := m.At(i); u != "hello" || v != "string" {
 		t.Errorf("Invalid arg at %v %v %v",i,u,v)
 	}
