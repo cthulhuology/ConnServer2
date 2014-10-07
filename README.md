@@ -69,6 +69,7 @@ enough to build useful systems with, but it will probably take a year to harden 
 that one would actually consider using it in production.
 
 Release v0.1 	(Octoberish 2014)
+
 	* messages
 	* actors
 	* direct routing
@@ -79,29 +80,36 @@ Release v0.1 	(Octoberish 2014)
 	* websockets
 
 Release v0.2 	(Novemberish 2014)
+
 	* object cache
 	* object persistence
 
 Release v0.3	(Januaryish 2015)
+
 	* live upgrades
 
 Release v0.4	(Marchish 2015)
+
 	* server to server
 	* automatic failover
 
 Release v0.5	(Mayish 2015)
+
 	* tcp sockets
 	* bot toolkit
 	* object toolkit
 
 Release v0.6	(Julyish 2015)
+
 	* ui toolkit
 	* management ui
 
 Release v0.7	(Septemberish 2015)
+
 	* sample game
 
 Release v1.0	(Octoberish 2015)
+
 	* fully operational deathstar
 
 
