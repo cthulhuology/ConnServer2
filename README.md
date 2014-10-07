@@ -38,13 +38,8 @@ it's predicessor.  ConnServer2 will support:
 Overall ConnServer2 should be slightly more robust and capable of running on substantially more cores than 
 the original ConnServer codebase which was started over 11 years ago.  
 
-In addition to the major functional upgrades, I am going to use ConnServer2 as an excuse to evaluate new 
-programming languages for system software.  Whereas the original ConnServer was written with an eye towards
-making money, ConnServer2 is largely an exercise in improving the original.  Towards that end, I expect to
-implement 2 different versions of the same application.
-
-As the original ConnServer was written in C++, the first language that I am going to attempt to implement
-it in is Go, http://golang.org.  While the original code base exploited many advanced features of C++, the
+As the original ConnServer was written in C++, I am going to attempt to implement ConnServer2 
+in Go, http://golang.org.  While the original code base exploited many advanced features of C++, the
 Go rewrite will attempt use all of the major features of the language.  This will be the first substantial
 program that I am writing in Go, and I'm already finding some of the limitations of the language to be 
 a bit more than annoying.  But from Algol in funny hats to Algol in funny hats isn't such a big switch.
