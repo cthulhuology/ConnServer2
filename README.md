@@ -30,7 +30,7 @@ As such the new ConnServer2 code base is going to modernize a bit and attempt to
 it's predicessor.  ConnServer2 will support:
 
 	* JSON as it's native messaging format
-	* WebSocket support will work out of the box, as will raw TCP connections
+	* WebSocket support will work out of the box, as well as raw TCP connections
 	* The new Object Server functionality will be migrated to a separate process space
 	* An advanced Actor model will be supported for native bots and client connections
 	* Multiple routing topologies will be supported, in addition to pub/sub models
