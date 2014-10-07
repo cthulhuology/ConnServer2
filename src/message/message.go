@@ -62,6 +62,10 @@ func (m *Message) Recipient() string {
 	}
 }
 
+func (m *Message) Topic() string {
+	return m.topic
+}
+
 func (m *Message) At( i int ) (interface{}, string) {
 	switch m.value[i].(type) {
 		case bool:
