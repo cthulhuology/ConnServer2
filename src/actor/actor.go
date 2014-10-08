@@ -6,6 +6,7 @@ import (
 
 type handler func (a *Actor, m *message.Message) 
 
+
 type Actor struct {
 	name string
 	inbox chan *message.Message

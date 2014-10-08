@@ -44,6 +44,12 @@ func New(name string) *Room {
 	return r
 }
 
+// Name returns the name of the room, required for the registry to work.
+
+func (r *Room) Name() string {
+	return r.name
+}
+
 // Send does what is says to a given message to each of the members of the room.
 
 func (r *Room) Send(m *message.Message) {
@@ -98,6 +104,10 @@ func (r *Room) Members() []string {
 		members = append(members,v.Name())
 	}
 	return members
+}
+
+func (r *Room) Wait(chan *message.Message) {
+	// This function is a no-op but satisfies the Actor interface
 }
 
 

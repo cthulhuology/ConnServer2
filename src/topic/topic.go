@@ -99,3 +99,6 @@ func (t *Topic) Unsubscribe(a *actor.Actor) {
 	}
 }
 
+func (r *Room) Wait(chan *message.Message) {
+	// This function is a no-op but satisfies the Actor interface
+}
